@@ -1,0 +1,7 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "peliculas:lib"
+
+    - path: "./test"
+      component: "peliculas:test:peliculas-test"
