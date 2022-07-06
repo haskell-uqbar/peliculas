@@ -1,7 +1,8 @@
-# ejercicio-alumno
+![pelicula](./images/film.jpg)
 
-## Integrantes
+# Ejemplo de Películas
 
-- integrante1 (usuario github)
-- integrante2 (usuario github)
-...
+[![build](https://github.com/haskell-uqbar/peliculas/actions/workflows/build.yml/badge.svg)](https://github.com/haskell-uqbar/peliculas/actions/workflows/build.yml)
+
+Este ejemplo sirve para hacer una comparación contra [el mismo ejercicio resuelto en el paradigma lógico](https://github.com/Prolog-Uqbar/peliculas-prolog).
+
