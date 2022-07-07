@@ -20,17 +20,19 @@ buscarPelicula tituloPelicula = head . filter ((== tituloPelicula) . titulo)
 
 -- Req. 1: Saber si un actor actuó en una película (dada una serie de películas)
 actuo :: Actor -> String -> [Pelicula] -> Bool
-actuo actor tituloPelicula peliculas = implementame
+actuo actor tituloPelicula peliculas = actor `elem` actores (buscarPelicula tituloPelicula peliculas)
 
 -- Req. 2: Título de las películas donde actuó un actor
 peliculasDondeActuo :: Actor -> [Pelicula] -> [String]
-peliculasDondeActuo actor peliculas = implementame
+peliculasDondeActuo actor peliculas =
+ (map titulo . filter (\pelicula -> actuo actor (titulo pelicula) peliculas)) peliculas
+
 
 -- Req. 3: Saber quiénes actuaron en el título de una película (dada una lista de películas y actores)
 quienesActuaron :: String -> [Pelicula] -> [Actor]
-quienesActuaron tituloPelicula = implementame
+quienesActuaron tituloPelicula = actores . buscarPelicula tituloPelicula
 
 -- Req. 4: Saber si un actor hizo alguna película (dada una serie de películas)
 hizoAlgunaPelicula :: Actor -> [Pelicula] -> Bool
-hizoAlgunaPelicula actor = implementame
+hizoAlgunaPelicula actor = any (elem actor . actores)
 
