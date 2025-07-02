@@ -6,6 +6,14 @@ import Test.Hspec
 correrTests :: IO ()
 correrTests = hspec $ do
   describe "Test de ejemplo" $ do
-    it "El pdepreludat se instaló correctamente" $ do
-      1 + 1 `shouldBe` 2
+    it "Buscar una película por título" $ do
+      buscarPelicula "Good Fellas" peliculas `shouldBe` head peliculas
 
+    it "Saber si un actor actuó" $ do
+      peliculas `shouldSatisfy` actuo "lorraine bracco" "Good Fellas"
+
+    it "Quiénes actuaron" $ do
+      quienesActuaron "Good Fellas" peliculas `shouldBe` ["ray liotta", "lorraine bracco"]
+
+    it "Hizo alguna película" $ do
+      peliculas `shouldSatisfy` hizoAlgunaPelicula "brad pitt"
