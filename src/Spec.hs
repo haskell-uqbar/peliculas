@@ -12,8 +12,14 @@ correrTests = hspec $ do
     it "Saber si un actor actuó" $ do
       peliculas `shouldSatisfy` actuo "lorraine bracco" "Good Fellas"
 
+    it "Películas en las que actuó" $ do
+      peliculasDondeActuo "ray liotta" peliculas `shouldBe` ["Good Fellas"]
+
     it "Quiénes actuaron" $ do
       quienesActuaron "Good Fellas" peliculas `shouldBe` ["ray liotta", "lorraine bracco"]
 
     it "Hizo alguna película" $ do
       peliculas `shouldSatisfy` hizoAlgunaPelicula "brad pitt"
+
+    it "No hizo películas" $ do
+      peliculas `shouldNotSatisfy` hizoAlgunaPelicula "diegoPeretti"
